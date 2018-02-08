@@ -113,7 +113,13 @@
         <!-- Access log processes all example.
              Documentation at: /docs/config/valve.html
              Note: The pattern used is equivalent to using pattern="common" -->
-        <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" prefix="localhost_access_log." suffix=".txt" pattern="%h %l %u %t &quot;%r&quot; %s %b"/>
+      <Valve className="org.apache.catalina.valves.AccessLogValve"
+             directory="logs"
+             prefix="localhost_access."
+             suffix="log"
+             pattern="%h %l %u %t &quot;%r&quot; %s %b"
+             rotatable="false"
+             />
       </Host>
     </Engine>
     <Connector minSpareThreads="25" acceptCount="100" scheme="https" secure="true" SSLEnabled="true" port="8443" enableLookups="true" keystoreFile="conf/keystore" URIEncoding="UTF-8"/>
